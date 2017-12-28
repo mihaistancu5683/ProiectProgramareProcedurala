@@ -5,4 +5,4 @@ struct student {
 	char *city;
 	char *county;
 	char *married;
-}stdn[50];
+};
