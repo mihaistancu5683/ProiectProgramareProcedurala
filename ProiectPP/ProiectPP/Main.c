@@ -3,5 +3,6 @@
 
 void main()
 {
-	ReadFile("input.csv");
+	struct student students[50];
+	ReadFile("input.csv", students, 50);
 }

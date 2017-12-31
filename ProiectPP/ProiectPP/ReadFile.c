@@ -3,26 +3,25 @@
 #include <string.h>
 #include "student.h"
 
-int ReadFile(char *filename)
+int ReadFile(char *filename, struct student students[], int length)
 {
 	FILE *infile = NULL;
 	if ((infile = fopen(filename, "r")) == NULL) {
 		printf("Could not open input file\n");
 		return 1;
 	}
-	struct student stdn[50];
 	int studentNo = 0;
 	char line[1024];
 	while ((fgets(line, sizeof(line), infile))) {
 		char *pch = strtok(line, " ,.-");
-		stdn[studentNo].name = strtok(NULL, " ,.-");
-		stdn[studentNo].surname = strtok(NULL, " ,.-");
-		stdn[studentNo].age = strtok(NULL, " ,.-");
-		stdn[studentNo].city = strtok(NULL, " ,.-");
-		stdn[studentNo].county = strtok(NULL, " ,.-");
-		stdn[studentNo].married = strtok(NULL, " ,.-\n");
-		//studentNo++;
+		strcpy(students[studentNo].name, pch);
+		strcpy(students[studentNo].surname, strtok(NULL, " ,.-"));
+		strcpy(students[studentNo].age, strtok(NULL, " ,.-"));
+		strcpy(students[studentNo].city, strtok(NULL, " ,.-"));
+		strcpy(students[studentNo].county, strtok(NULL, " ,.-"));
+		strcpy(students[studentNo].married, strtok(NULL, " ,.-\n"));
+		studentNo++;
 	}
-	
+
 	return 0;
 }

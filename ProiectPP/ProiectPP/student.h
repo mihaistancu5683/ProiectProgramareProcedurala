@@ -1,8 +1,8 @@
 struct student {
-	char *name;
-	char *surname;
-	char *age;
-	char *city;
-	char *county;
-	char *married;
+	char name[41];
+	char surname[41];
+	char age[4];
+	char city[21];
+	char county[3];
+	char married[2];
 };
