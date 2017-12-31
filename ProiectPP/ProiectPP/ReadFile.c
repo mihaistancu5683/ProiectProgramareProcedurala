@@ -13,6 +13,8 @@ int ReadFile(char *filename, struct student students[], int length)
 	int studentNo = 0;
 	char line[1024];
 	while ((fgets(line, sizeof(line), infile))) {
+		if (studentNo >= length)
+			break;
 		char *pch = strtok(line, " ,.-");
 		strcpy(students[studentNo].name, pch);
 		strcpy(students[studentNo].surname, strtok(NULL, " ,.-"));

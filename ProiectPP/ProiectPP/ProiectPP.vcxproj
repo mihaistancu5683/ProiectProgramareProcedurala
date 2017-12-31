@@ -116,8 +116,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CountLines.c" />
     <ClCompile Include="Main.c" />
     <ClCompile Include="ReadFile.c" />
+    <ClCompile Include="SortNamesAscending.c" />
+    <ClCompile Include="Switch.c" />
+    <ClCompile Include="WriteFile.c" />
   </ItemGroup>
   <ItemGroup>
     <None Include="input.csv" />

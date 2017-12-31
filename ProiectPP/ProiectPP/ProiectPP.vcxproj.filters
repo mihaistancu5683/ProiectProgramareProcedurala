@@ -21,6 +21,18 @@
     <ClCompile Include="ReadFile.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CountLines.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SortNamesAscending.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Switch.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WriteFile.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="input.csv">
