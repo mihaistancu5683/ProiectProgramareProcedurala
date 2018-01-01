@@ -3,7 +3,7 @@
 #include <string.h>
 #include "student.h"
 
-int ReadFile(char *filename, struct student students[], int length)
+int ReadFile(char *filename, struct student *students, int length)
 {
 	FILE *infile = NULL;
 	if ((infile = fopen(filename, "r")) == NULL) {
@@ -16,13 +16,13 @@ int ReadFile(char *filename, struct student students[], int length)
 		if (studentNo >= length)
 			break;
 		char *pch = strtok(line, " ,.-");
-		strcpy(students[studentNo].name, pch);
-		strcpy(students[studentNo].surname, strtok(NULL, " ,.-"));
-		strcpy(students[studentNo].age, strtok(NULL, " ,.-"));
-		strcpy(students[studentNo].city, strtok(NULL, " ,.-"));
-		strcpy(students[studentNo].county, strtok(NULL, " ,.-"));
-		strcpy(students[studentNo].married, strtok(NULL, " ,.-\n"));
-		studentNo++;
+		strcpy(students->name, pch);
+		strcpy(students->surname, strtok(NULL, " ,.-"));
+		strcpy(students->age, strtok(NULL, " ,.-"));
+		strcpy(students->city, strtok(NULL, " ,.-"));
+		strcpy(students->county, strtok(NULL, " ,.-"));
+		strcpy(students->married, strtok(NULL, " ,.-\n"));
+		students++;
 	}
 
 	return 0;

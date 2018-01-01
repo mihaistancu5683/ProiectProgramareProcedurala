@@ -1,15 +1,20 @@
 #include "student.h"
 
-int SortNamesAscending(struct student students[50], int length)
+void SortNamesAscending(struct student *students, int length)
 {
-	int studentNo = 0;
-	for (int i = 1; i < length; i++)
+	int i, j;
+	for (i = 0; i < length - 1; i++)
 	{
-		struct student student1 = students[i - 1];
-		struct student student2 = students[i];
-		if (0 < strcmp(student1.name, student2.name))
+		// Last i elements are already in place   
+		for (j = 0; j < length - i - 1; j++)
 		{
-			Switch(student1, student2);
+			struct student *student1 = students + j;
+			struct student *student2 = students + j + 1;
+			if (0 < strcmp(student1->name, student2->name))
+			{
+				Switch(student1, student2);
+			}
 		}
 	}
 }
+

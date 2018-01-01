@@ -3,7 +3,7 @@
 #include <string.h>
 #include "student.h"
 
-int WriteFile(char *filename, struct student students[], int length)
+int WriteFile(char *filename, struct student *students[], int length)
 {
 	FILE *outfile = NULL;
 	if ((outfile = fopen(filename, "w")) == NULL) {
@@ -13,16 +13,16 @@ int WriteFile(char *filename, struct student students[], int length)
 	int studentNo = 0;
 	for (int i = 0; i < length; i++)
 	{
-		if (0 != strcmp("", students[i].name))
+		if (0 != strcmp("", (*students[i]).name))
 		{
 			fprintf(outfile,
 				"%s,%s,%s,%s,%s,%s\n",
-				students[i].name,
-				students[i].surname,
-				students[i].age,
-				students[i].city,
-				students[i].county,
-				students[i].married
+				(*students[i]).name,
+				(*students[i]).surname,
+				(*students[i]).age,
+				(*students[i]).city,
+				(*students[i]).county,
+				(*students[i]).married
 			);
 		}
 	}
