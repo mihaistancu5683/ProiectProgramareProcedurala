@@ -25,5 +25,6 @@ int ReadFile(char *filename, struct student *students, int length)
 		students++;
 	}
 
+	fclose(infile);
 	return 0;
 }
