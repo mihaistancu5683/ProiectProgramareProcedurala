@@ -10,8 +10,10 @@ void SortNamesAscending(struct student *students, int length)
 		{
 			struct student *student1 = students + j;
 			struct student *student2 = students + j + 1;
+			// If names are not alphabetically sorted
 			if (0 < strcmp(student1->name, student2->name))
 			{
+				// Switch the students
 				Switch(student1, student2);
 			}
 		}

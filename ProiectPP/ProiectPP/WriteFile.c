@@ -10,9 +10,9 @@ int WriteFile(char *filename, struct student *students, int length)
 		printf("Could not open output file\n");
 		return 1;
 	}
-	int studentNo = 0;
 	for (int i = 0; i < length; i++)
 	{
+		// If the student name is valid (not empty)
 		if (0 != strcmp("", (students + i)->name))
 		{
 			fprintf(outfile,
