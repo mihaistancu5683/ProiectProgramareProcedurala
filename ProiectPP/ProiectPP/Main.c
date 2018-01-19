@@ -27,7 +27,17 @@ void main(int argc, char **argv)
 	// Allocate memory for the struct
 	struct student *students = malloc(studentNo * sizeof(struct student));
 	ReadFile(inputFile, students, studentNo);
-	SortNamesAscending(students, studentNo);
+	printf("Sort by: Name (press 1) or Surname (press 2)?");
+	char criteria = getchar();
+	if (criteria == '1' || criteria == '2')
+	{
+		SortNamesAscending(students, studentNo, criteria);
+	}
+	else
+	{
+		printf("Option not found. Filtering by Name.");
+		SortNamesAscending(students, studentNo, 1);
+	}
 	WriteFile(outputFile, students, studentNo);
 	// Free memory from the stuct
 	free(students);

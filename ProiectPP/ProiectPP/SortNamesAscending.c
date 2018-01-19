@@ -1,6 +1,6 @@
 #include "student.h"
 
-void SortNamesAscending(struct student *students, int length)
+void SortNamesAscending(struct student * students, int length, char criteria)
 {
 	int i, j;
 	for (i = 0; i < length - 1; i++)
@@ -10,11 +10,23 @@ void SortNamesAscending(struct student *students, int length)
 		{
 			struct student *student1 = students + j;
 			struct student *student2 = students + j + 1;
-			// If names are not alphabetically sorted
-			if (0 < strcmp(student1->name, student2->name))
+			if (criteria == '1')
 			{
-				// Switch the students
-				Switch(student1, student2);
+				// If names are not alphabetically sorted
+				if (0 < strcmp(student1->name, student2->name))
+				{
+					// Switch the students
+					Switch(student1, student2);
+				}
+			}
+			else
+			{
+				// If surnames are not alphabetically sorted
+				if (0 < strcmp(student1->surname, student2->surname))
+				{
+					// Switch the students
+					Switch(student1, student2);
+				}
 			}
 		}
 	}
