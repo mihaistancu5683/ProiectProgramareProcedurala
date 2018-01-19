@@ -36,7 +36,7 @@ void main(int argc, char **argv)
 	else
 	{
 		printf("Option not found. Filtering by Name.");
-		SortNamesAscending(students, studentNo, 1);
+		SortNamesAscending(students, studentNo, '1');
 	}
 	WriteFile(outputFile, students, studentNo);
 	// Free memory from the stuct
